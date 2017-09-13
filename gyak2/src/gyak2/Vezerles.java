@@ -161,7 +161,6 @@ public class Vezerles {
     }
 
     private void rendezve() {
-        Collections.ma
         Collections.sort(rendezvenyek, new LetszamSzerint());
         System.out.println("\nRendezve");
         for (Rendezveny rendezveny : rendezvenyek) {
