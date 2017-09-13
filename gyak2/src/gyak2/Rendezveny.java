@@ -23,10 +23,17 @@ public class Rendezveny {
         this.jegyAr = jegyAr;
     }
     
+    /**
+     * Résztvevő részt vesz
+     * 
+     * @param resztvevo 
+     */
     public void resztVesz(Resztvevo resztvevo){
-        if(resztvevo.belep(this)){
+        if(resztvevo.belephet(this)){
+            resztvevo.fizet(resztvevo.reszveteliDij(this));
+            resztvevo.resztVesz(this);           
             resztvevokSzama++;
-            bevetel += jegyAr;
+            bevetel += resztvevo.reszveteliDij(this);
         }
     }
 

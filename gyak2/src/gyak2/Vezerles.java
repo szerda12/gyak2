@@ -8,6 +8,7 @@ package gyak2;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -37,6 +38,9 @@ public class Vezerles {
         adatKiiras();
         jubileum();
         eredmenyKiiras();
+        maxKereses();
+        kedvezmenyOsszeg();
+        rendezve();
     }
 
     private void adatBevitel() {
@@ -123,5 +127,46 @@ public class Vezerles {
             }
         }
     }
-}
 
+    private void maxKereses() {
+        int max = rendezvenyek.get(0).getBevetel();
+        for (Rendezveny rendezveny : rendezvenyek) {
+            if(rendezveny.getBevetel() > max){
+                max = rendezveny.getBevetel();
+            }
+        }
+        System.out.printf("A legtöbb bevételt (%d Ft) hozó rendezvény:\n",max);
+        for (Rendezveny rendezveny : rendezvenyek) {
+            if(rendezveny.getBevetel() == max){
+                System.out.println(rendezveny);
+            }
+        }
+    }
+
+    private void kedvezmenyOsszeg() {
+        int ossz;
+        System.out.println("\nKedvezményezettek");
+        for (Resztvevo resztvevo : resztvevok) {
+            ossz = 0;
+            if (resztvevo instanceof PTEsResztvevo) {
+                for (Rendezveny rendezveny : resztvevo.getRendezvenyek()) {
+                    ossz += rendezveny.getJegyAr()
+                            - resztvevo.reszveteliDij(rendezveny);
+                }
+                System.out.printf("\nA %s azonosítójú PTE polgár kedvezményösszege %d Ft",
+                        ((PTEsResztvevo) resztvevo).getPteAzonosito(),
+                        ossz);
+            }
+        }
+    }
+
+    private void rendezve() {
+        Collections.ma
+        Collections.sort(rendezvenyek, new LetszamSzerint());
+        System.out.println("\nRendezve");
+        for (Rendezveny rendezveny : rendezvenyek) {
+            System.out.println(rendezveny + " létszám: " 
+                    + rendezveny.getResztvevokSzama());
+        }
+    }
+}
