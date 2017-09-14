@@ -118,7 +118,7 @@ public class JubileumTeszt {
 
         // feltételezés: be tud menni a második rendezvényre is.
         
-        assertTrue(resztvevo.belep(rendezveny2));
+        assertTrue(resztvevo.belephet(rendezveny2));
 
         // feltételezés: bővült azoknak a rendezvényeknek a listája, amelyeken
         // részt vett,
