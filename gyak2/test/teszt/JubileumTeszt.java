@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author hallgato
+ * @author :)
  */
 public class JubileumTeszt {
 
@@ -132,3 +132,4 @@ public class JubileumTeszt {
     }
 }
 
+class a
