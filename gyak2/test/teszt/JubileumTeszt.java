@@ -85,26 +85,45 @@ public class JubileumTeszt {
 
     @Test
     public void resztvevoTeszt() {
-        Resztvevo resztvevo = new Resztvevo("nev");
+        // Most azt akarjuk ellenőrizni, hogy a résztvevőhöz tartozó 
+        // rendezvények listája helyesen bővül-e, ezért kell még egy rendezvény.
+        // Ezt elég lokálisan megadni
+        
         Rendezveny rendezveny2 = new Rendezveny("cim2", IDOPONT, JEGY_AR);
 
         resztvevo.penztKap(JEGY_AR);
 
+        // Látható, hogy a rendezvényen ismét nincs senki, mert lefutott a 
+        // @Before annotációjú metódus.
+        
         assertTrue(rendezveny.getResztvevokSzama() == 0);
 
+        // feltételezés: a résztvevő még nem járt egyetlen rendezvényen sem
+        
         assertTrue(resztvevo.getRendezvenyek().isEmpty());
 
         rendezveny.resztVesz(resztvevo);
 
+        // feltételezés: részt vett a rendezvényen és az általa látogatott
+        // rendezvények listája is bővült. 
+        // Arról még nem volt szó tisztességesen, hogy azt is ellenőrizni 
+        // tudjuk, hogy a konkrét rendezvény szerepel-e a listán - ezt majd 
+        // később próbálja ki önállóan, ha már tanulta a Contains() metódus 
+        // pontos használatát.
+        // Most csak annyit feltételezünk, hogy a listában van már egy elem.
+        
         assertEquals(rendezveny.getResztvevokSzama(), 1);
         assertTrue(resztvevo.getRendezvenyek().size() == 1);
 
         resztvevo.penztKap(JEGY_AR);
 
-        // felt. be tud menni
-        assertTrue(resztvevo.belephet(rendezveny2));
+        // feltételezés: be tud menni a második rendezvényre is.
+        
+        assertTrue(resztvevo.belep(rendezveny2));
 
-        rendezveny2.resztVesz(resztvevo);
+        // feltételezés: bővült azoknak a rendezvényeknek a listája, amelyeken
+        // részt vett,
+        // és a 2. rendezvényen már van 1 résztvevő.
 
         assertTrue(resztvevo.getRendezvenyek().size() == 2);
 
@@ -112,3 +131,4 @@ public class JubileumTeszt {
 
     }
 }
+
