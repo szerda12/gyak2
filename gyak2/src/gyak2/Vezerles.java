@@ -135,7 +135,7 @@ public class Vezerles {
                 max = rendezveny.getBevetel();
             }
         }
-        System.out.printf("A legtöbb bevételt (%d Ft) hozó rendezvény:\n",max);
+        System.out.printf("\nA legtöbb bevételt (%d Ft) hozó rendezvény:\n",max);
         for (Rendezveny rendezveny : rendezvenyek) {
             if(rendezveny.getBevetel() == max){
                 System.out.println(rendezveny);
@@ -153,7 +153,7 @@ public class Vezerles {
                     ossz += rendezveny.getJegyAr()
                             - resztvevo.reszveteliDij(rendezveny);
                 }
-                System.out.printf("\nA %s azonosítójú PTE polgár kedvezményösszege %d Ft",
+                System.out.printf("\nA %s azonosítójú PTE polgár össz kedvezménye %d Ft",
                         ((PTEsResztvevo) resztvevo).getPteAzonosito(),
                         ossz);
             }
