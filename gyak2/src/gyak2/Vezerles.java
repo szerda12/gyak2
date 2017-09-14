@@ -162,7 +162,7 @@ public class Vezerles {
 
     private void rendezve() {
         Collections.sort(rendezvenyek, new LetszamSzerint());
-        System.out.println("\n\n Létszám szerint rendezve");
+        System.out.println("\n\nLétszám szerint rendezve");
         for (Rendezveny rendezveny : rendezvenyek) {
             System.out.println(rendezveny + " létszám: " 
                     + rendezveny.getResztvevokSzama());
