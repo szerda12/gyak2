@@ -125,9 +125,7 @@ public class JubileumTeszt {
         // és a 2. rendezvényen már van 1 résztvevő.
 
         assertTrue(resztvevo.getRendezvenyek().size() == 2);
-
         assertEquals(rendezveny2.getResztvevokSzama(), 1);
-
     }
 }
 
