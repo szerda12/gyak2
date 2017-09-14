@@ -19,6 +19,5 @@ public class LetszamSzerint implements Comparator<Rendezveny>{
     @Override
     public int compare(Rendezveny o1, Rendezveny o2) {
         return o2.getResztvevokSzama() - o1.getResztvevokSzama();
-    }
-    
+    }    
 }
