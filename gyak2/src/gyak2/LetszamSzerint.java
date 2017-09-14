@@ -21,3 +21,4 @@ public class LetszamSzerint implements Comparator<Rendezveny>{
         return o2.getResztvevokSzama() - o1.getResztvevokSzama();
     }    
 }
+
