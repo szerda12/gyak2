@@ -21,15 +21,20 @@ public class JubileumTeszt {
     private final String CIM = "cim";
     private final String IDOPONT = "dátum";
     private final int JEGY_AR = 1000;
-    private double KEDVEZMENY_SZAZALEK = 10;
+    private final String NEV = "nev";
+    private final double KEDVEZMENY_SZAZALEK = 10;
+
     
     public JubileumTeszt() {
     }
     
     private Rendezveny rendezveny;
+    private Resztvevo resztvevo;
+    
     @Before
     public void setUp() {
         rendezveny = new Rendezveny(CIM, IDOPONT, JEGY_AR);
+        resztvevo = new Resztvevo(NEV);
         PTEsResztvevo.setKedvezmenySzazalek(KEDVEZMENY_SZAZALEK);
     }
 
