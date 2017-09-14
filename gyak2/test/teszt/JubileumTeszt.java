@@ -80,7 +80,6 @@ public class JubileumTeszt {
         // feltételezés: már ketten vannak és nőtt a bevétel
         assertEquals(rendezveny.getResztvevokSzama(), 2);
         assertTrue(rendezveny.getBevetel() == 1900);
-
     }
 
     @Test
