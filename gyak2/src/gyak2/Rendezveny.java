@@ -39,7 +39,7 @@ public class Rendezveny {
 
     @Override
     public String toString() {
-        return cim + ", időpontja: " + idoPont + ", jegyár: " + jegyAr;
+        return cim + ", időpontja: " + idoPont + ", jegyár: " + jegyAr + " Ft";
     }    
 
     public String getCim() {

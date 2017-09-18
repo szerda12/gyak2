@@ -136,4 +136,3 @@ public class JubileumTeszt {
     }
 }
 
-class a
