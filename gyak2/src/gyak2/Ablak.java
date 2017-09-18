@@ -25,7 +25,7 @@ class Ablak extends JFrame{
         this.szelesseg = szelesseg;
         this.magassag = magassag;
         this.cim = cim;
-        inicializalas(); // először enélkül
+        inicializalas(); 
     }
 
     private void inicializalas() {
