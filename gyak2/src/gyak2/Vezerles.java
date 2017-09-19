@@ -175,7 +175,7 @@ public class Vezerles {
         String cim = "Jubileumi rendezvények";
         Ablak ablak = new Ablak(szelesseg, magassag, cim);
         String[] oszlopNevek = {"Cím","Időpont","Jegyár (Ft)","Résztvevőszám","Bevétel (Ft)"};
-        ablak.ablakbaIr(rendezvenyek,oszlopNevek);
+        ablak.ablakbaIr(new ArrayList<Rendezveny>(rendezvenyek),oszlopNevek);
         
 //        ablak.setVisible(true);        
     }
